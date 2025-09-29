@@ -1,0 +1,48 @@
+:root {
+  --bg-light: #f3f4f6;
+  --bg-dark: #111c64;
+  --text-light: #111c64;
+  --text-dark: #f3f4f6;
+  --amber: #ef501a;
+}
+
+.App {
+  text-align: center;
+}
+
+.App.light {
+  background-color: var(--bg-light);
+  color: var(--text-light);
+}
+
+.App.dark {
+  background-color: var(--bg-dark);
+  color: var(--text-dark);
+}
+
+.App-header {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  box-shadow: inset 0px 0px 15px var(--amber);
+  animation: pulse 5s infinite;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: inset 0px 0px 15px 3px var(--amber);
+  }
+  50% {
+    box-shadow: inset 0px 0px 25px 6px var(--amber);
+  }
+  100% {
+    box-shadow: inset 0px 0px 15px 3px var(--amber);
+  }
+}
