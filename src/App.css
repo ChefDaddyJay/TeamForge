@@ -1,48 +1,91 @@
 :root {
   --bg-light: #f3f4f6;
-  --bg-dark: #111c64;
+  --bg-dark: #050924;
   --text-light: #111c64;
   --text-dark: #f3f4f6;
-  --amber: #ef501a;
+  --link-light: #008090;
+  --link-dark: #75f5fd;
+  --amber-dark: #ef401a;
+  --amber-light: #f5805a;
 }
 
 .App {
   text-align: center;
 }
 
-.App.light {
-  background-color: var(--bg-light);
-  color: var(--text-light);
+@media (prefers-color-scheme: light) {
+  .App {
+    background-color: var(--bg-light);
+    color: var(--text-light);
+  }
+  .App-link {
+    color: var(--link-light);
+  }
+  .App-link:hover {
+    color: var(--amber-light);
+  }
 }
 
-.App.dark {
-  background-color: var(--bg-dark);
-  color: var(--text-dark);
+@media (prefers-color-scheme: dark) {
+  .App {
+    background-color: var(--bg-dark);
+    color: var(--text-dark);
+  }
+  .App-link {
+    color: var(--link-dark);
+  }
+  .App-link:hover {
+    color: var(--amber-dark);
+  }
 }
 
-.App-header {
+.App .welcome {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  box-shadow: inset 0px 0px 15px var(--amber);
-  animation: pulse 5s infinite;
-}
-
-.App-link {
-  color: #61dafb;
+  box-shadow:
+    inset 0px 0px 15px var(--amber-dark),
+    inset 0 0 5px var(--link-light);
+  animation: pulse 10s infinite;
 }
 
 @keyframes pulse {
   0% {
-    box-shadow: inset 0px 0px 15px 3px var(--amber);
+    box-shadow:
+      inset 0px 0px 1px 0 var(--amber-dark),
+      inset 0 0 10px var(--link-light);
+  }
+  10% {
+    box-shadow:
+      inset 0px 0px 3px 0 var(--amber-dark),
+      inset 0 0 10px var(--link-light);
+  }
+  40% {
+    box-shadow:
+      inset 0px 0px 10px 3px var(--amber-dark),
+      inset 0 0 20px var(--link-light);
   }
   50% {
-    box-shadow: inset 0px 0px 25px 6px var(--amber);
+    box-shadow:
+      inset 0px 0px 13px 3px var(--amber-dark),
+      inset 0 0 23px var(--link-light);
+  }
+  60% {
+    box-shadow:
+      inset 0px 0px 10px 3px var(--amber-dark),
+      inset 0 0 20px var(--link-light);
+  }
+  90% {
+    box-shadow:
+      inset 0px 0px 5px 0 var(--amber-dark),
+      inset 0 0 10px var(--link-light);
   }
   100% {
-    box-shadow: inset 0px 0px 15px 3px var(--amber);
+    box-shadow:
+      inset 0px 0px 1px 0 var(--amber-dark),
+      inset 0 0 10px var(--link-light);
   }
 }

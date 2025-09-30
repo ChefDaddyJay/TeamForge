@@ -1,14 +1,15 @@
-import { Link, Outlet, createRootRoute } from "@tanstack/react-router";
+import { Outlet, createRootRoute } from "@tanstack/react-router";
 import { TanStackRouterDevtoolsPanel } from "@tanstack/react-router-devtools";
 import { TanstackDevtools } from "@tanstack/react-devtools";
+import { Toaster } from "react-hot-toast";
 
 export const Route = createRootRoute({
   component: () => (
     <>
-      <div className="navbar">
-        <Link to="/dashboard">Dashboard</Link>
+      <div className="App">
+        <Outlet />
       </div>
-      <Outlet />
+      <Toaster />
       <TanstackDevtools
         config={{
           position: "bottom-left",

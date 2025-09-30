@@ -11,14 +11,3 @@ code {
   font-family:
     source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
-
-.navbar {
-  left: 0;
-  top: 0;
-  right: 0;
-  min-height: 2.5rem;
-  display: flex;
-  align-items: center;
-  padding-left: 1rem;
-  background-color: var(--bg-light);
-}
