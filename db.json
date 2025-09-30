@@ -2,11 +2,19 @@
   "users": [
     {
       "username": "josh",
-      "password": "password"
+      "password": "password",
+      "id": "37b3"
     },
     {
       "username": "Dezi",
-      "password": "dezipass"
+      "password": "dezipass",
+      "id": "570b"
+    },
+    {
+      "id": "947a",
+      "username": "Gweny",
+      "password": "GwenyPass",
+      "confirm": "GwenyPass"
     }
   ]
 }

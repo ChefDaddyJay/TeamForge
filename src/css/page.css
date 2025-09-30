@@ -1,4 +1,4 @@
-.login-page {
+.app-page {
   position: absolute;
   top: 0;
   right: 0;
@@ -7,20 +7,22 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
+  animation: pulse 10s infinite;
 }
 
-.login-form h1 {
+.page-form h1 {
   padding-bottom: 2rem;
 }
 
-.login-form {
+.page-form {
   min-width: 20rem;
   max-width: 50vmin;
   border-radius: 1rem;
   padding: 1rem;
 }
 
-.login-form form {
+.page-form form {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -28,17 +30,17 @@
   gap: 1rem;
 }
 
-.login-form form div {
+.page-form form div {
   width: 100%;
   display: flex;
   align-items: center;
 }
 
-form div span {
+.page-form form div span {
   width: 30%;
 }
 
-input {
+.page-form form input {
   width: 70%;
   border-radius: 0.5rem;
   border-width: 1px;
@@ -46,39 +48,71 @@ input {
   padding: 0.5rem;
 }
 
-.buttons {
+.page-form .buttons {
   display: flex;
   justify-content: center;
 }
 
-.login-button {
+.page-form .buttons .action-button {
+  min-height: 5rem;
   padding: 0.5rem 2rem;
   font-size: x-large;
   border-radius: 0.5rem;
   border-width: 1px;
   text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-style: outset;
+  padding-block: 1px;
 }
 
 @media (prefers-color-scheme: light) {
-  .login-page {
+  .app-page {
     background-color: var(--bg-light);
     color: var(--text-light);
   }
-  .login-form {
-    border: 3px solid var(--link-light);
+  .page-form {
     background-color: var(--bg-dark);
+    color: var(--text-dark);
     box-shadow:
       0 0 0.5rem var(--amber-light),
       0 0 1rem var(--link-light);
   }
+  input {
+    border-color: var(--link-light);
+  }
+  input:focus {
+    outline: none;
+    border: 1px solid var(--amber-dark);
+    box-shadow:
+      inset 0 0 3px var(--link-dark),
+      0 0 1px var(--amber-light);
+  }
+  .action-button {
+    margin: 2rem;
+    color: var(--text-dark);
+    border-color: var(--link-dark);
+    box-shadow: 0 0 3px var(--link-dark);
+  }
+  .action-button:hover {
+    cursor: pointer;
+    color: var(--amber-dark);
+    box-shadow:
+      0 0 3px var(--link-dark),
+      0 0 5px var(--amber-dark);
+  }
+  .page-form form .error {
+    border: 2px solid var(--amber-light);
+  }
 }
 
 @media (prefers-color-scheme: dark) {
-  .login-page {
+  .app-page {
     background-color: var(--bg-dark);
     color: var(--text-dark);
   }
-  .login-form {
+  .page-form {
     background-color: var(--bg-light);
     color: var(--text-light);
     box-shadow:
@@ -95,17 +129,20 @@ input {
       inset 0 0 3px var(--link-light),
       0 0 1px var(--amber-dark);
   }
-  .login-button {
+  .action-button {
     margin: 2rem;
     color: var(--text-light);
     border-color: var(--link-light);
     box-shadow: 0 0 3px var(--link-light);
   }
-  .login-button:hover {
+  .action-button:hover {
     cursor: pointer;
     color: var(--amber-light);
     box-shadow:
       0 0 3px var(--link-light),
       0 0 5px var(--amber-light);
+  }
+  .page-form form .error {
+    border: 2px solid var(--amber-dark);
   }
 }

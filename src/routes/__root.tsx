@@ -6,7 +6,7 @@ import { Toaster } from "react-hot-toast";
 export const Route = createRootRoute({
   component: () => (
     <>
-      <div className="App">
+      <div className="app-page">
         <Outlet />
       </div>
       <Toaster />
