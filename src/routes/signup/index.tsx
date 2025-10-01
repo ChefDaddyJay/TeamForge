@@ -1,9 +1,9 @@
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
-import "../../css/page.css";
-import BackButton from "@/components/BackButton";
 import { useState, type ChangeEvent, type FormEvent } from "react";
 import toast from "react-hot-toast";
 import { signup, type TSignupInput } from "@/auth";
+import ActionButton from "@/components/ActionButton";
+import TextInput from "@/components/TextInput";
 
 export const Route = createFileRoute("/signup/")({
   component: RouteComponent,
@@ -37,43 +37,34 @@ function RouteComponent() {
   };
 
   return (
-    <div className="app-page">
-      <div className="page-form">
-        <h1>Welcome to TeamForge!</h1>
-        <form onSubmit={handleSubmit}>
-          <div>
-            <span>Username</span>
-            <input
-              type="text"
-              id="username"
-              onChange={handleChange}
-              value={username}
-            />
-          </div>
-          <div>
-            <span>Password</span>
-            <input
-              type="password"
-              id="password"
-              onChange={handleChange}
-              value={password}
-            />
-          </div>
-          <div>
-            <span>Confirm Password</span>
-            <input
-              type="password"
-              id="confirm"
-              onChange={handleChange}
-              value={confirm}
-              className={password !== confirm ? "error" : ""}
-            />
-          </div>
-          <div className="buttons">
-            <BackButton to="/" />
-            <button type="submit" className="action-button">
-              Sign up
-            </button>
+    <div
+      className="flex justify-center items-center 
+                 text-center shadow-lg shadow-ember rounded-2xl p-4
+                 border-ember border"
+    >
+      <div className="bg-dark text-amber-50 flex flex-col items-center">
+        <img src="/TeamForgeIcon-32x32.png" />
+        <h1 className="text-2xl font-bold m-2 mb-8">Welcome to TeamForge!</h1>
+        <form onSubmit={handleSubmit} className="flex flex-col gap-3">
+          <TextInput
+            label="Username"
+            value={username}
+            onChange={handleChange}
+          />
+          <TextInput
+            label="Password"
+            value={password}
+            onChange={handleChange}
+          />
+          <TextInput
+            label="Confirm Password"
+            value={confirm}
+            onChange={handleChange}
+            type="password"
+          />
+          <div className="my-4">
+            <ActionButton to="/">Back</ActionButton>
+            <ActionButton to="">Sign up</ActionButton>
           </div>
         </form>
       </div>

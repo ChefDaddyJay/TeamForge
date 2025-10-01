@@ -13,8 +13,13 @@
     {
       "id": "947a",
       "username": "Gweny",
-      "password": "GwenyPass",
-      "confirm": "GwenyPass"
+      "password": "GwenyPass"
+    },
+    {
+      "id": "c5fe",
+      "username": "jordan",
+      "password": "jordanpass"
     }
-  ]
+  ],
+  "projects": []
 }

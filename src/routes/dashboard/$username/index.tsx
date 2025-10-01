@@ -6,5 +6,6 @@ export const Route = createFileRoute("/dashboard/$username/")({
 
 function RouteComponent() {
   const { username } = Route.useParams();
-  return <div>Hello, {username}</div>;
+
+  return <div className="page-box inner-box">Hello, {username}</div>;
 }

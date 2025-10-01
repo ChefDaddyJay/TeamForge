@@ -32,9 +32,10 @@ export async function login(input: TLoginInput) {
 }
 
 export async function signup(input: TSignupInput) {
-  const user = await Requests.postUser(input);
+  const { username, password } = input;
+  const user = await Requests.postUser({ username, password });
   if (!user) {
-    throw new Error("Filed to create user");
+    throw new Error("Failed to create user");
   }
 
   return user;

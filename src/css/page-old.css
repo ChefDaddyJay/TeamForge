@@ -11,18 +11,19 @@
   animation: pulse 10s infinite;
 }
 
-.page-form h1 {
+.inner-page {
+  min-width: calc(80vw - 1rem);
+  position: absolute;
+  right: 0.5rem;
+  top: 0.5rem;
+  bottom: 0.5rem;
+}
+
+.page-box h1 {
   padding-bottom: 2rem;
 }
 
-.page-form {
-  min-width: 20rem;
-  max-width: 50vmin;
-  border-radius: 1rem;
-  padding: 1rem;
-}
-
-.page-form form {
+.page-box form {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -30,17 +31,17 @@
   gap: 1rem;
 }
 
-.page-form form div {
+.page-box form div {
   width: 100%;
   display: flex;
   align-items: center;
 }
 
-.page-form form div span {
+.page-box form div span {
   width: 30%;
 }
 
-.page-form form input {
+.page-box form input {
   width: 70%;
   border-radius: 0.5rem;
   border-width: 1px;
@@ -48,12 +49,12 @@
   padding: 0.5rem;
 }
 
-.page-form .buttons {
+.page-box .buttons {
   display: flex;
   justify-content: center;
 }
 
-.page-form .buttons .action-button {
+.page-box .buttons .action-button {
   min-height: 5rem;
   padding: 0.5rem 2rem;
   font-size: x-large;
@@ -72,7 +73,7 @@
     background-color: var(--bg-light);
     color: var(--text-light);
   }
-  .page-form {
+  .page-box {
     background-color: var(--bg-dark);
     color: var(--text-dark);
     box-shadow:
@@ -102,7 +103,7 @@
       0 0 3px var(--link-dark),
       0 0 5px var(--amber-dark);
   }
-  .page-form form .error {
+  .page-box form .error {
     border: 2px solid var(--amber-light);
   }
 }
@@ -112,12 +113,19 @@
     background-color: var(--bg-dark);
     color: var(--text-dark);
   }
-  .page-form {
+  .page-box {
     background-color: var(--bg-light);
     color: var(--text-light);
     box-shadow:
       0 0 0.5rem var(--amber-dark),
       0 0 1rem var(--link-dark);
+  }
+  .inner-box {
+    background-color: var(--bg-dark);
+    color: var(--text-dark);
+    box-shadow:
+      inset 0 0 0.5rem var(--amber-dark),
+      inset 0 0 1rem var(--link-dark);
   }
   input {
     border-color: var(--link-dark);
@@ -142,7 +150,7 @@
       0 0 3px var(--link-light),
       0 0 5px var(--amber-light);
   }
-  .page-form form .error {
+  .page-box form .error {
     border: 2px solid var(--amber-dark);
   }
 }

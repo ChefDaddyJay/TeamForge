@@ -1,17 +1,18 @@
 import { Link } from "@tanstack/react-router";
+import AppLink from "./AppLink";
 
 export default function Welcome() {
   return (
-    <div className="welcome">
+    <div
+      className="min-h-[100vh] flex flex-col items-center 
+                    justify-center text-3xl bg-indigo-950
+                    text-amber-100 font-bold"
+    >
       <img src="/TeamForgeIcon-192x192.png" />
-      <h1>TeamForge</h1>
-      <Link className="App-link" to="/login">
-        Login
-      </Link>
+      <h1 className="text-6xl my-4">TeamForge</h1>
+      <AppLink to="/login">Login</AppLink>
       or
-      <Link className="App-link" to="/signup">
-        Sign up
-      </Link>
+      <AppLink to="/signup">Sign up</AppLink>
     </div>
   );
 }

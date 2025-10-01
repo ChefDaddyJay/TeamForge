@@ -1,3 +1,5 @@
+@import "tailwindcss";
+
 body {
   margin: 0;
   font-family:
@@ -10,4 +12,16 @@ body {
 code {
   font-family:
     source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+@layer utilities {
+  .scrollbar::-webkit-scrollbar {
+    width: 0px;
+  }
+}
+
+@theme {
+  --color-dark: #050924;
+  --color-link: #75f5fd;
+  --color-ember: #ff754a;
 }
